@@ -1,7 +1,7 @@
-#include<iostream>
+#include"Matcher.cpp"
 
-using namespace std;
-
-void main () {
-  cout << 'Hello, Melon!' << endl;
+int main () {
+  RegexMatcher matcher;
+  matcher.match_input("melon");
+  return 0;
 }
