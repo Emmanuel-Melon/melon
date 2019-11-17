@@ -1,12 +1,3 @@
-#include<iostream>
-#include<iterator>
-#include<string>
-#include<regex>
-#include<map>
-#include<thread>
-#include<ctime>
-
-
 // @description it uses the ECMAScript grammar
 class RegexMatcher {
 private:
