@@ -1,7 +1,11 @@
-#include<iostream>
+#include"Matcher.cpp"
 
 using namespace std;
 
-void main () {
-  cout << 'Hello, Melon!' << endl;
+int main () {
+  RegexMatcher matcher;
+  std::string str = "louis vu";
+  matcher.match_input_type(str);
+
+  return 0;
 }
