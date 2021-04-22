@@ -6,23 +6,19 @@
 #include<thread>
 #include<ctime>
 
-#include"Matcher.cpp"
+// custom libs
+#include"identify.h"
 
 
 using namespace std;
 
-/**
-* current task:
-* reading files from the command line
-* running inputs
-* building a repel
-*/
 int main (int argc, char *argv[]) {
   RegexMatcher matcher;
-  std::string str = "louis vu";
+  CLI cli;
+  std::string str = "int num = 5;";
   matcher.match_input_type(str);
+
+  cli.processArguments(argv, argc);
 
   return 0;
 }
-
-// let's do TXT for now
