@@ -1,11 +1,7 @@
-class Tokenizer {
-private:
-  int tokens;
-public:
-  template <typename T> bool tokenize(T input);
-};
+#include "../include/tokenizer.h""
 
+Tokenizer::Tokenizer() {}
 
-template <typename T> bool Tokenizer::tokenize(T input) {
-  cout << "tokenizing this input" << endl;
+void Tokenizer::tokenize () {
+  // let's do some magic!
 }
