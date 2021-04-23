@@ -4,17 +4,21 @@
 
 TokenIdentifier::TokenIdentifier() {}
 
-
-int TokenIdentifier::is_integer(int num)
+bool TokenIdentifier::is_integer(char character)
 {
-  regex rgx(this->NUMBER);
-  smatch smatch;
-  return num;
+  return this->test_regex(character, this->NUMBER);
 }
 
-string TokenIdentifier::is_letter(string str)
+bool TokenIdentifier::is_letter(char character)
 {
-  regex rgx(this->LETTER);
-  smatch smatch;
-  return str;
+  return this->test_regex(character, this->LETTER);
+}
+
+bool TokenIdentifier::test_regex(char input, string reg)
+{
+  regex rgx(reg);
+  smatch result;
+  // regex_search(input, result, rgx);
+  // std::cout << result[0] << std::endl;
+  return true; // return regex test value
 }

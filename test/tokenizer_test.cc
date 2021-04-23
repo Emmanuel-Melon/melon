@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 // write assertions
-TEST(HelloTest, BasicAssertions)
+TEST(TOKENIZERTEST, BasicAssertions)
 {
   EXPECT_STRNE("hello", "world");
 }

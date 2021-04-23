@@ -15,8 +15,9 @@ private:
   char OPERATORS[5] = {'+', '-', '*', '/', '%'};
 public:
   TokenIdentifier();
-  int is_integer(int num);
-  string is_letter(string str);
+  bool is_integer(char character);
+  bool is_letter(char character);
+  bool test_regex(char input, string reg);
 };
 
 #endif
