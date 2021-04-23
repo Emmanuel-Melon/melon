@@ -1,4 +1,6 @@
 #include <vector>
+#include <typeinfo>
+#include <stdexcept>
 #include "../include/identify.h"
 #include "../include/tokenizer.h"
 
@@ -13,11 +15,20 @@ vector<Token> Tokenizer::tokenize(string input)
   while (cursor < input.length())
   {
     char character = input[cursor];
-    if(identifier.is_integer(character)) {
+
+    if (identifier.is_integer(character))
+    {
+      char number = character;
       Token token;
-      token.set_type("integer");
+      token.set_type(typeid(character).name());
       token.set_value(character);
       vect.push_back(token);
+      // while (identifier.is_integer(input[cursor]))
+      // {
+      // number += input[cursor];
+      // }
+      cursor++;
+      continue;
     }
     else if (identifier.is_letter(character))
     {
@@ -25,8 +36,13 @@ vector<Token> Tokenizer::tokenize(string input)
       token.set_type("letter");
       token.set_value(character);
       vect.push_back(token);
+      cursor++;
+      continue;
     }
-    cursor++;
+    else
+    {
+      throw std::invalid_argument("received negative value");
+    }
   }
 
   return vect;

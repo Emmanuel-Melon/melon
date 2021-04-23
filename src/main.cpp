@@ -15,11 +15,11 @@ int main(int argc, char *argv[])
   Tokenizer tokenizer;
 
   vector<Token> tokens;
-  tokens = tokenizer.tokenize("God of War");
+  tokens = tokenizer.tokenize("Elshako!");
 
   for (int i = 0; i < tokens.size(); i++)
   {
-    tokens[i].display_type();
+    tokens[i].display_token();
   }
   return 0;
 }
