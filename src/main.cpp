@@ -6,19 +6,14 @@
 #include<thread>
 #include<ctime>
 
-// custom libs
-#include"identify.h"
+#include"../include/identify.h"
 
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
-  RegexMatcher matcher;
-  CLI cli;
-  std::string str = "int num = 5;";
-  matcher.match_input_type(str);
-
-  cli.processArguments(argv, argc);
-
+  TokenIdentifier identify;
+  cout << identify.is_integer(5) << endl;
+  cout << identify.is_string("Hello") << endl;
   return 0;
 }

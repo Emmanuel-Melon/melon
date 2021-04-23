@@ -1,24 +1,22 @@
-#ifndef REGEXMATCHER_H
-#define REGEXMATCHER_H
+#ifndef TokenIdentifier_H
+#define TokenIdentifier_H
 
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-class RegexMatcher
+class TokenIdentifier
 {
 private:
+  string LETTER = "[a - zA - Z]";
+  string WHITESPACE = "s + ";
+  string NUMBER = "^[0 - 9] + $";
+  char OPERATORS[5] = {'+', '-', '*', '/', '%'};
 public:
-  RegexMatcher();
-  RegexMatcher(string grammar);
-
-  // method signatures
-  template <typename T>
-  bool match_input_type(T input);
-
-  // specific type methods
-  void test_integer(int num);
-  void test_string(std::string str);
+  TokenIdentifier();
+  int is_integer(int num);
+  string is_letter(string str);
 };
+
 #endif

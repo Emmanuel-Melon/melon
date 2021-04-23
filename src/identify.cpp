@@ -1,30 +1,20 @@
-#include"identify.h"
+#include <regex>
+#include <string>
+#include "../include/identify.h"
 
-RegexMatcher::RegexMatcher() {}
+TokenIdentifier::TokenIdentifier() {}
 
-RegexMatcher::RegexMatcher(string grammar){}
 
-template <typename T> bool RegexMatcher::match_input_type(T input) 
+int TokenIdentifier::is_integer(int num)
 {
-  std::cout << input << std::endl;
-  this->test_string(input);
-  return true;
+  regex rgx(this->NUMBER);
+  smatch smatch;
+  return num;
 }
 
-
-void RegexMatcher::test_integer(int num) 
+string TokenIdentifier::is_letter(string str)
 {
-
-  std::cout << num << std::endl;
-}
-
-void RegexMatcher::test_string(std::string str) 
-{
-  // use a raw string
-  std::string regExpr("([a-zA-Z])");
-  std::regex rgx(regExpr);
-
-  std::smatch result;
-  std::regex_search(str, result, rgx);
-  std::cout << result[0] << result[1] << std::endl;
+  regex rgx(this->LETTER);
+  smatch smatch;
+  return str;
 }
